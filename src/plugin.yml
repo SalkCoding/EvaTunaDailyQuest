@@ -1,0 +1,10 @@
+name: EvaTunaDailyQuest
+main: net.evatunadailyquest.salkcoding.main.Main
+version: 1.0.8
+author: Salk_Coding
+api-version: 1.13
+commands:
+  DailyQuest:
+    description: Base command of all commmand in this plugin
+    usage: /DailyQuest or /dq or /일퀘 or /일일퀘스트 (Ignore case)
+    aliases: [dq,일퀘,일일퀘스트]

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="EvaTunaDailyQuest:jar">
+    <output-path>$PROJECT_DIR$/../../../../Minecraft/Plugin Test Bukkit/plugins</output-path>
+    <root id="archive" name="EvaTunaDailyQuest.jar">
+      <element id="module-output" name="EvaTunaDailyQuest" />
+    </root>
+  </artifact>
+</component>
