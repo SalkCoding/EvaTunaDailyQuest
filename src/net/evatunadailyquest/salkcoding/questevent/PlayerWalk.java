@@ -7,6 +7,7 @@ import net.evatunadailyquest.salkcoding.script.Script;
 import net.evatunadailyquest.salkcoding.script.ScriptManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 
@@ -14,8 +15,10 @@ import java.util.List;
 
 public class PlayerWalk implements Listener {
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onWalk(PlayerMoveEvent event) {
+        if(event.isCancelled())
+            return;
         Player player = event.getPlayer();
         if (ScriptManager.getPlayerDailyQuests(player) == null)
             return;

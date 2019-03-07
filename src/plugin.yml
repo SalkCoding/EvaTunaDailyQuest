@@ -1,6 +1,6 @@
 name: EvaTunaDailyQuest
 main: net.evatunadailyquest.salkcoding.main.Main
-version: 1.0.8
+version: 1.1.1
 author: Salk_Coding
 api-version: 1.13
 commands:

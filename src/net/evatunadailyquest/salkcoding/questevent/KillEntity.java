@@ -33,18 +33,11 @@ public class KillEntity implements Listener {
             QuestEvent questEvent = script.getQuestEvent();
 
             if (script.getQuestEvent().getType() == QuestType.PICKUP_ITEM) {
-                boolean added = false;
                 for (ItemStack item : event.getDrops()) {
-                    if (questEvent.getObjectiveTypes().contains(item.getType())) {
+                    if(item == null) continue;
+                    if (questEvent.getObjectiveTypes().contains(item.getType()))
                         ScriptManager.addDrop(player.getUniqueId(), item);
-                        added = true;
-                    }
                 }
-                if (added) Bukkit.getScheduler().runTaskLaterAsynchronously(Main.getInstance(), () -> {
-                    for (ItemStack item : event.getDrops())
-                        if (ScriptManager.getDrop(player.getUniqueId(), item) < 0)
-                            ScriptManager.removeDrop(player.getUniqueId(), item);
-                }, 6000);
             }
 
             if (questEvent.getType() == QuestType.KILL_ENTITY && questEvent.getObjectiveTypes().contains(entity.getType())) {

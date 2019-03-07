@@ -29,7 +29,7 @@ public final class Constants {
         double printPercentage = (event.getCondition() * 0.1f);
         if (percentage >= 100)
             return;
-        if (printPercentage <= added)
+        if (printPercentage <= added || percentage % 10 == 0)
             player.sendMessage(Constants.Info_Format + script.getQuestName() + ChatColor.GRAY + ChatColor.ITALIC + "의 현재 진행률 : " + String.format("%.1f%%", percentage));
     }
 

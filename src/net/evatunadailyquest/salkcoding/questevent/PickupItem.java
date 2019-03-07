@@ -7,6 +7,7 @@ import net.evatunadailyquest.salkcoding.script.Script;
 import net.evatunadailyquest.salkcoding.script.ScriptManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.inventory.ItemStack;
@@ -15,8 +16,10 @@ import java.util.List;
 
 public class PickupItem implements Listener {
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onPick(EntityPickupItemEvent event) {
+        if(event.isCancelled())
+            return;
         if (!(event.getEntity() instanceof Player))
             return;
         Player player = (Player) event.getEntity();
@@ -29,9 +32,9 @@ public class PickupItem implements Listener {
             ItemStack item = event.getItem().getItemStack();
             QuestEvent questEvent = script.getQuestEvent();
             if (questEvent.getType() == QuestType.PICKUP_ITEM && questEvent.getObjectiveTypes().contains(item.getType())) {
-                if (ScriptManager.getDrop(player.getUniqueId(), item) < 0 || Constants.getEmptySlot(player, item) <= 0)
-                    return;
                 int added = ScriptManager.getDrop(player.getUniqueId(), item);
+                if (added < 0 || Constants.getEmptySlot(player, item) <= 0)
+                    return;
                 double progress = questEvent.getProgress() + added;
                 if (questEvent.getCondition() <= progress) script.clear(player);
                 else questEvent.setProgress(progress);

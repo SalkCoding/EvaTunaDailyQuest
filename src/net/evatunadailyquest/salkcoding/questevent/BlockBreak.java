@@ -11,6 +11,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
@@ -19,8 +20,10 @@ import java.util.List;
 
 public class BlockBreak implements Listener {
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onBreak(BlockBreakEvent event) {
+        if(event.isCancelled())
+            return;
         if (event.getPlayer() == null)
             return;
         Player player = event.getPlayer();
@@ -32,22 +35,11 @@ public class BlockBreak implements Listener {
             if (script.isClear())
                 continue;
             QuestEvent questEvent = script.getQuestEvent();
-            if (!AntiCheating.isUsed(player, block.getLocation())) {
-                if (script.getQuestEvent().getType() == QuestType.PICKUP_ITEM) {
-                    boolean added = false;
-                    for (ItemStack item : event.getBlock().getDrops(player.getInventory().getItemInMainHand())) {
-                        if (questEvent.getObjectiveTypes().contains(item.getType())) {
+            if (!AntiCheating.isUsed(player, block.getLocation()))
+                if (script.getQuestEvent().getType() == QuestType.PICKUP_ITEM)
+                    for (ItemStack item : event.getBlock().getDrops(player.getInventory().getItemInMainHand()))
+                        if (questEvent.getObjectiveTypes().contains(item.getType()))
                             ScriptManager.addDrop(player.getUniqueId(), item);
-                            added = true;
-                        }
-                    }
-                    if (added) Bukkit.getScheduler().runTaskLaterAsynchronously(Main.getInstance(), () -> {
-                        for (ItemStack item : event.getBlock().getDrops(player.getInventory().getItemInMainHand()))
-                            if (ScriptManager.getDrop(player.getUniqueId(), item) < 0)
-                                ScriptManager.removeDrop(player.getUniqueId(), item);
-                    }, 6000);
-                }
-            }
 
             if (questEvent.getType() == QuestType.BLOCK_BREAK && questEvent.getObjectiveTypes().contains(block.getType())) {
                 if (!AntiCheating.isUsed(player, block.getLocation())) {

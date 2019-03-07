@@ -11,6 +11,7 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 
@@ -21,7 +22,7 @@ public class BlockPlace implements Listener {
 
     //private static HashSet<UUID> playerSet = new HashSet<>();
 
-    private static QuickHash<Material> logSet = new QuickHash<>(
+    private static final QuickHash<Material> logSet = new QuickHash<>(
             Material.STRIPPED_OAK_LOG,
             Material.STRIPPED_ACACIA_LOG,
             Material.STRIPPED_BIRCH_LOG,
@@ -38,8 +39,10 @@ public class BlockPlace implements Listener {
             Material.DIAMOND_AXE
     );*/
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlace(BlockPlaceEvent event) {
+        if(event.isCancelled())
+            return;
         if (event.getPlayer() == null)
             return;
         Player player = event.getPlayer();

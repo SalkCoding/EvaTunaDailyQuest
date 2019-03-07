@@ -15,59 +15,95 @@ import org.bukkit.scheduler.BukkitTask;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ScriptManager {
 
-    private static HashMap<UUID, List<ItemStack>> dropMap = new HashMap<>();
+    private static HashMap<UUID, CopyOnWriteArrayList<LaterDeleteItemStack>> dropMap = new HashMap<>();
+
     private static HashMap<UUID, List<Script>> playerMap = new HashMap<>();
     private static HashMap<String, Script> scriptMap = new HashMap<>();
     private static HashSet<UUID> resetSet = new HashSet<>();
-    private static BukkitTask task;
+    private static BukkitTask timeTask;
+    private static BukkitTask itemTask;
     private static boolean isReset = false;
+
+    private static final Object getKey = new Object();
 
     public static void addDrop(UUID uuid, ItemStack add) {
         //System.out.println(dropMap);
-        if (dropMap.containsKey(uuid)) {
-            List<ItemStack> list = dropMap.get(uuid);
-            for (ItemStack item : list) if (item.isSimilar(add)) item.setAmount(item.getAmount() + add.getAmount());
-        } else {
-            List<ItemStack> list = new ArrayList<>();
-            list.add(add);
-            dropMap.put(uuid, list);
-        }
-        //System.out.println(dropMap);
-    }
-
-    public static int getDrop(UUID uuid, ItemStack compare) {
-        if (dropMap.containsKey(uuid)) for (ItemStack item : dropMap.get(uuid))
-            if (item.isSimilar(compare)) return compare.getAmount();
-        return -1;
-    }
-
-    public static void removeDrop(UUID uuid, ItemStack compare) {
-        //System.out.println(dropMap);
-        if (dropMap.containsKey(uuid)) {
-            List<ItemStack> list = dropMap.get(uuid);
-            int i = 0;
-            for (ItemStack item : list) {
-                if(item.getType() == Material.AIR)
-                    list.remove(item);
-                if (item.isSimilar(compare)) {
-                    int amount = item.getAmount() - compare.getAmount();
-                    if (amount > 0) item.setAmount(amount);
-                    else {
-                        list.remove(i);
-                        if(list.size() <= 0)
-                            dropMap.remove(uuid);
-                    }
-                    break;
-                }
-                i++;
+        LaterDeleteItemStack itemStack = new LaterDeleteItemStack(add);
+        synchronized (getKey) {
+            if (dropMap.containsKey(uuid)) {
+                List<LaterDeleteItemStack> list = dropMap.get(uuid);
+                list.add(itemStack);
+            } else {
+                CopyOnWriteArrayList<LaterDeleteItemStack> list = new CopyOnWriteArrayList<>();
+                list.add(itemStack);
+                dropMap.put(uuid, list);
             }
         }
         //System.out.println(dropMap);
     }
 
+    public static int getDrop(UUID uuid, ItemStack compare) {
+        //System.out.println(dropMap);
+        synchronized (getKey) {
+            if (dropMap.containsKey(uuid)) for (LaterDeleteItemStack item : dropMap.get(uuid))
+                if (item.getItem().isSimilar(compare)) return compare.getAmount();
+        }
+        return -1;
+    }
+
+    public static void removeDrop(UUID uuid, ItemStack remove) {
+        if (dropMap.containsKey(uuid)) {
+            List<LaterDeleteItemStack> list = dropMap.get(uuid);
+            int i = 0;
+            synchronized (getKey) {
+                for (LaterDeleteItemStack item : list) {
+                    ItemStack compare = item.getItem();
+                    if (compare.getType() == Material.AIR)
+                        list.remove(item);
+                    if (compare.isSimilar(remove)) {
+                        int amount = compare.getAmount() - remove.getAmount();
+                        if (amount > 0) compare.setAmount(amount);
+                        else list.remove(i);
+                        break;
+                    }
+                    i++;
+                }
+            }
+        }
+        //System.out.println(dropMap);
+    }
+
+    //Delete special value in map every 5 minutes
+    private static void remove() {
+        for (Map.Entry<UUID, CopyOnWriteArrayList<LaterDeleteItemStack>> element : dropMap.entrySet()) {
+            synchronized (getKey) {
+                List<LaterDeleteItemStack> list = element.getValue();
+                for (LaterDeleteItemStack itemStack : list)
+                    if (itemStack.haveToDelete()) {
+                        list.remove(itemStack);
+                    }
+            }
+        }
+    }
+
+    //reset player quest when 12 O' Clock
+    private static void reset() {
+        Calendar now = Calendar.getInstance();
+        if (now.get(Calendar.HOUR_OF_DAY) == 12) {
+            if (!isReset) {
+                for (Map.Entry<UUID, List<Script>> element : playerMap.entrySet())
+                    resetPlayerDailyQuests(Bukkit.getOfflinePlayer(element.getKey()));
+                isReset = true;
+                System.out.println(Constants.Console_Format + "Last reset Time : " + now.getTime());
+            }
+        } else {
+            isReset = false;
+        }
+    }
 
     public static void addPlayerReset(Player player) {
         resetSet.add(player.getUniqueId());
@@ -96,14 +132,14 @@ public class ScriptManager {
                 player.getPlayer().closeInventory();
                 GUICreator.createGUI(player.getPlayer());
             }
+            UUID uuid = player.getUniqueId();
+            playerMap.replace(uuid, DailyQuestCreator.createQuestList(scriptMap));
+            for (Script script : getPlayerDailyQuests(player)) {
+                script.setClear(false);
+                script.getQuestEvent().setProgress(0);
+            }
+            resetSet.remove(uuid);
         }
-        UUID uuid = player.getUniqueId();
-        playerMap.replace(uuid, DailyQuestCreator.createQuestList(scriptMap));
-        for (Script script : getPlayerDailyQuests(player)) {
-            script.setClear(false);
-            script.getQuestEvent().setProgress(0);
-        }
-        resetSet.remove(uuid);
     }
 
     public static void addPlayerDailyQuests(OfflinePlayer player) {
@@ -115,13 +151,15 @@ public class ScriptManager {
         scriptMap = ScriptReader.readScripts();
         playerMap = SaveProgress.loadPlayerMap();
         resetSet = SaveProgress.loadResetSet();
-        task = Bukkit.getScheduler().runTaskTimerAsynchronously(Main.getInstance(), ScriptManager::run, 0, 200);
+        timeTask = Bukkit.getScheduler().runTaskTimerAsynchronously(Main.getInstance(), ScriptManager::reset, 20, 6000);
+        itemTask = Bukkit.getScheduler().runTaskTimerAsynchronously(Main.getInstance(), ScriptManager::remove, 20, 3000);
         System.out.println(Constants.Console_Format + playerMap.size() + " of player's progresses are loaded");
     }
 
     public static void save() throws IOException {
         SaveProgress.saveTimeMap(playerMap, resetSet);
-        task.cancel();
+        timeTask.cancel();
+        itemTask.cancel();
     }
 
     public static boolean hasClearData(Player player) {
@@ -132,19 +170,26 @@ public class ScriptManager {
         return false;
     }
 
-    //reset player quest when 12 O' Clock
-    private static void run() {
-        Calendar now = Calendar.getInstance();
-        if (now.get(Calendar.HOUR_OF_DAY) == 12) {
-            if (!isReset) {
-                for (Map.Entry<UUID, List<Script>> element : playerMap.entrySet())
-                    resetPlayerDailyQuests(Bukkit.getOfflinePlayer(element.getKey()));
-                isReset = true;
-                System.out.println(Constants.Console_Format + "Last reset Time : " + now.getTime());
-            }
-        } else {
-            isReset = false;
+    static class LaterDeleteItemStack {
+
+        private ItemStack item;
+        private Calendar time;
+
+        LaterDeleteItemStack(ItemStack item) {
+            this.item = item;
+            time = Calendar.getInstance();
+            time.add(Calendar.MINUTE, 5);
         }
+
+        boolean haveToDelete() {
+            Calendar now = Calendar.getInstance();
+            return now.after(time);
+        }
+
+        ItemStack getItem() {
+            return item;
+        }
+
     }
 
 }
