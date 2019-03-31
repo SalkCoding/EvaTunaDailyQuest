@@ -1,9 +1,8 @@
 package net.evatunadailyquest.salkcoding.questevent;
 
-import net.evatunadailyquest.salkcoding.quest.QuestEvent;
-import net.evatunadailyquest.salkcoding.quest.QuestType;
 import net.evatunadailyquest.salkcoding.script.Script;
 import net.evatunadailyquest.salkcoding.script.ScriptManager;
+import net.evatunadailyquest.salkcoding.script.specificscript.PickupScript;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -24,7 +23,7 @@ public class PlayerShear implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onShear(PlayerShearEntityEvent event) {
-        if(event.isCancelled())
+        if (event.isCancelled())
             return;
         Random random = new Random(System.currentTimeMillis());
         Sheep sheep = (Sheep) event.getEntity();
@@ -34,7 +33,7 @@ public class PlayerShear implements Listener {
 
         Location location = sheep.getLocation();
         location.add(0, 1, 0);//Make item drop naturally such as shearing
-        location.getWorld().playSound(location, Sound.ENTITY_SHEEP_SHEAR, 5, 5);
+        location.getWorld().playSound(location, Sound.ENTITY_SHEEP_SHEAR, 5, 1);
         EntityDropItemEvent entityDropItemEvent = new EntityDropItemEvent(sheep, sheep.getWorld().dropItemNaturally(location, drop));
         Bukkit.getPluginManager().callEvent(entityDropItemEvent);
         event.setCancelled(true);
@@ -44,13 +43,12 @@ public class PlayerShear implements Listener {
             return;
         List<Script> list = ScriptManager.getPlayerDailyQuests(player);
         for (Script script : list) {
-            if (script.isClear())
+            if (script.isClear() || !(script instanceof PickupScript))
                 continue;
-            QuestEvent questEvent = script.getQuestEvent();
-            if (questEvent.getType() == QuestType.PICKUP_ITEM && questEvent.getObjectiveTypes().contains(drop.getType())) {
-                ScriptManager.addDrop(player.getUniqueId(), drop);
-                return;
-            }
+            PickupScript pickupScript = (PickupScript) script;
+            if(pickupScript.isContainInSet(drop.getType()))
+            ScriptManager.addDrop(player.getUniqueId(), drop);
+            return;
         }
     }
 

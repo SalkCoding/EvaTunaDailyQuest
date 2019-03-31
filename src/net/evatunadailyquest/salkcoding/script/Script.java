@@ -51,6 +51,18 @@ public class Script implements Cloneable {
         return rewards;
     }
 
+    public void addProgress(Player player, int add) {
+        if (event.getCondition() <= (event.getProgress() + add)) this.clear(player);
+        else event.setProgress(event.getProgress() + add);
+        Constants.sendPercentage(player, this, event, add);
+    }
+
+    public void addProgress(Player player, double add) {
+        if (event.getCondition() <= (event.getProgress() + add)) this.clear(player);
+        else event.setProgress(event.getProgress() + add);
+        Constants.sendPercentage(player, this, event, (int) add);
+    }
+
     public boolean isClear() {
         return clear;
     }
@@ -72,14 +84,14 @@ public class Script implements Cloneable {
         clear = true;
     }
 
-    public void setClear(boolean b) {
-        clear = false;
+    void setClear(boolean b) {
+        clear = b;
     }
 
     @Override
     public Script clone() throws CloneNotSupportedException {
         Script clone = (Script) super.clone();
-        clone.event = new QuestEvent(clone.getQuestEvent().getType(), clone.getQuestEvent().getObjectiveTypes(), clone.getQuestEvent().getCondition());
+        clone.event = new QuestEvent(clone.getQuestEvent().getCondition());
         return clone;
     }
 

@@ -1,12 +1,10 @@
 package net.evatunadailyquest.salkcoding.questevent;
 
-import net.evatunadailyquest.salkcoding.Constants;
 import net.evatunadailyquest.salkcoding.QuickHash;
 import net.evatunadailyquest.salkcoding.anticheat.AntiCheating;
-import net.evatunadailyquest.salkcoding.quest.QuestEvent;
-import net.evatunadailyquest.salkcoding.quest.QuestType;
 import net.evatunadailyquest.salkcoding.script.Script;
 import net.evatunadailyquest.salkcoding.script.ScriptManager;
+import net.evatunadailyquest.salkcoding.script.specificscript.PlaceScript;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -18,9 +16,6 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import java.util.List;
 
 public class BlockPlace implements Listener {
-//First called event is PlayerInteractEvent, second called event is BlockPlaceEvent.
-
-    //private static HashSet<UUID> playerSet = new HashSet<>();
 
     private static final QuickHash<Material> logSet = new QuickHash<>(
             Material.STRIPPED_OAK_LOG,
@@ -41,7 +36,7 @@ public class BlockPlace implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlace(BlockPlaceEvent event) {
-        if(event.isCancelled())
+        if (event.isCancelled())
             return;
         if (event.getPlayer() == null)
             return;
@@ -57,14 +52,11 @@ public class BlockPlace implements Listener {
         for (Script script : list) {
             if (script.isClear())
                 continue;
-            QuestEvent questEvent = script.getQuestEvent();
-            if (questEvent.getType() == QuestType.BLOCK_PLACE && questEvent.getObjectiveTypes().contains(block.getType())) {
-                int added = 1;
-                double progress = questEvent.getProgress() + added;
-                if (questEvent.getCondition() <= progress) script.clear(player);
-                else questEvent.setProgress(progress);
-                Constants.sendPercentage(player, script, questEvent, added);
-                return;
+
+            if (script instanceof PlaceScript) {
+                PlaceScript placeScript = (PlaceScript) script;
+                if (placeScript.isContainInSet(block.getType())) placeScript.addProgress(player, 1);
+                return;//Place event doesn't have drops
             }
         }
     }

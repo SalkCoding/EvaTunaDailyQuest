@@ -14,25 +14,17 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/BlockBreak.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/BlockPlace.java">
+        <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/file/ScriptReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+            <state relative-caret-position="2486">
+              <caret line="113" column="43" lean-forward="true" selection-start-line="113" selection-start-column="43" selection-end-line="113" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,92 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/KillEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PickupItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PlayerShear.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PlayerWalk.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PlayTime.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/ScriptManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2420">
-              <caret line="131" column="49" selection-start-line="131" selection-start-column="49" selection-end-line="131" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4179#4180#0" expanded="true" />
-                <element signature="e#4229#4230#0" expanded="true" />
-                <element signature="e#4288#4289#0" expanded="true" />
-                <element signature="e#4350#4351#0" expanded="true" />
-                <element signature="e#4674#4675#0" expanded="true" />
-                <element signature="e#4716#4717#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/plugin.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="47">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -164,6 +72,10 @@
       <find>equal</find>
       <find>equals</find>
       <find>compare1</find>
+      <find>QuestType</find>
+      <find>player</find>
+      <find>set</find>
+      <find>setPro</find>
     </findStrings>
     <replaceStrings>
       <replace>hasCode()</replace>
@@ -174,16 +86,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/net/evatuna/salkcoding/event/KillEntity.java" />
-        <option value="$PROJECT_DIR$/src/net/evatuna/salkcoding/event/PickupItem.java" />
-        <option value="$PROJECT_DIR$/src/net/evatuna/salkcoding/event/PlayerWalk.java" />
-        <option value="$PROJECT_DIR$/src/net/evatuna/salkcoding/event/BlockPlace.java" />
-        <option value="$PROJECT_DIR$/src/net/evatuna/salkcoding/event/BlockBreak.java" />
-        <option value="$PROJECT_DIR$/src/net/evatuna/salkcoding/event/InventoryClick.java" />
-        <option value="$PROJECT_DIR$/src/net/evatuna/salkcoding/command/AdminCommand.java" />
-        <option value="$PROJECT_DIR$/src/net/evatuna/salkcoding/command/UserCommand.java" />
-        <option value="$PROJECT_DIR$/src/net/evatuna/salkcoding/quest/QuestEvent.java" />
-        <option value="$PROJECT_DIR$/src/net/evatuna/salkcoding/questevent/PlayTime.java" />
         <option value="$PROJECT_DIR$/src/net/evatuna/salkcoding/questevent/BlockBreak.java" />
         <option value="$PROJECT_DIR$/src/net/evatuna/salkcoding/questevent/BlockPlace.java" />
         <option value="$PROJECT_DIR$/src/net/evatuna/salkcoding/questevent/KillEntity.java" />
@@ -201,36 +103,46 @@
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/GUI/GUICreator.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/event/InventoryClick.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/quest/QuestType.java" />
-        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/quest/QuestEvent.java" />
-        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/Script.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/file/TimeSave.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/quest/DailyQuestCreator.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/event/PlayerJoin.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/QuickHashSet.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/anticheat/AntiCheating.java" />
-        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/file/SaveProgress.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PlayerInteract.java" />
-        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/command/PluginCommand.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/custom/TreeEvent.java" />
-        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PlayTime.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/Constants.java" />
-        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/file/ScriptReader.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/TaskManager.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/main/Main.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/ScriptManager.java" />
-        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/BlockBreak.java" />
-        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/KillEntity.java" />
-        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PlayerWalk.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/specificscript/GetScript.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/specificscript/PlaceScript.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/specificscript/BreakScript.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/specificscript/PlayScript.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/specificscript/KillScript.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/specificscript/PickupScript.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/file/FileUtil.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/command/PluginCommand.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PlayTime.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PlayerShear.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/quest/QuestEvent.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PickupItem.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/specificscript/WalkScript.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PlayerWalk.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/Script.java" />
         <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/BlockPlace.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/BlockBreak.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/file/SaveProgress.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/specificscript/MythicMobKillScript.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/ScriptType.java" />
         <option value="$PROJECT_DIR$/src/plugin.yml" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/file/ScriptReader.java" />
+        <option value="$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/KillEntity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="261" />
-    <option name="y" value="4" />
+    <option name="x" value="216" />
+    <option name="y" value="34" />
     <option name="width" value="1400" />
     <option name="height" value="987" />
   </component>
@@ -239,6 +151,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -320,12 +233,19 @@
               <item name="salkcoding" type="462c0819:PsiDirectoryNode" />
               <item name="script" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="EvaTunaDailyQuest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EvaTunaDailyQuest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="salkcoding" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
+              <item name="specificscript" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -335,14 +255,18 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="evatunadailyquest" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551620127407" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553439339360" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Minecraft/Library/MythicMobs-4.5.5.jar!/" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -431,17 +355,32 @@
       <workItem from="1551599531108" duration="2641000" />
       <workItem from="1551614432578" duration="5698000" />
       <workItem from="1551801420775" duration="252000" />
+      <workItem from="1552578075107" duration="322000" />
+      <workItem from="1552669959843" duration="118000" />
+      <workItem from="1552813663241" duration="130000" />
+      <workItem from="1552826078501" duration="608000" />
+      <workItem from="1553182754797" duration="599000" />
+      <workItem from="1553267667846" duration="231000" />
+      <workItem from="1553340412305" duration="1631000" />
+      <workItem from="1553349478565" duration="8000" />
+      <workItem from="1553416833937" duration="10378000" />
+      <workItem from="1553439904970" duration="2000" />
+      <workItem from="1554019220056" duration="12000" />
+      <workItem from="1554019286618" duration="48000" />
+      <workItem from="1554020767476" duration="76000" />
+      <workItem from="1554020862225" duration="4000" />
+      <workItem from="1554020884149" duration="19000" />
+      <workItem from="1554023487571" duration="4553000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199430000" />
+    <option name="totallyTimeSpent" value="218169000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21991481" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2625133" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -449,7 +388,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946752" weight="0.32937366" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -459,8 +398,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.64749736" side_tool="true" visible="true" weight="0.39200863" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.35250267" weight="0.39200863" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.6490313" side_tool="true" weight="0.39200863" />
+      <window_info active="true" anchor="bottom" id="Messages" order="12" sideWeight="0.3509687" visible="true" weight="0.42332613" />
       <window_info anchor="bottom" id="Duplicate detector" order="13" sideWeight="0.49840257" weight="0.32937366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -477,148 +416,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/BNZ.5c6808e6120ab027/Config.java" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/BNZ.5c6808e0120a9702/AntiMobAbuse.java" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/BNZ.5c6808ee120aceac/Mob.java" />
-    <entry file="jar://$PROJECT_DIR$/../../../../Minecraft/Library/spigot-1.13.2.jar!/org/bukkit/Location.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="231" column="29" lean-forward="true" selection-start-line="231" selection-start-column="29" selection-end-line="231" selection-end-column="29" />
-          <folding>
-            <element signature="e#8403#8404#0" expanded="true" />
-            <element signature="e#8454#8455#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/event/PlayerJoin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="543" column="17" selection-start-line="543" selection-start-column="17" selection-end-line="543" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="260" column="12" selection-start-line="260" selection-start-column="12" selection-end-line="260" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/QuickHash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/event/InventoryClick.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../../Minecraft/Library/spigot-1.13.2.jar!/org/bukkit/event/player/PlayerEvent.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../../Minecraft/Library/spigot-1.13.2.jar!/org/bukkit/event/player/PlayerShearEntityEvent.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/command/PluginCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="37" column="58" lean-forward="true" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../../Minecraft/Library/spigot-1.13.2.jar!/org/bukkit/event/player/PlayerInteractEntityEvent.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="23" column="47" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Enum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="129" column="18" selection-start-line="129" selection-start-column="18" selection-end-line="129" selection-end-column="18" />
-          <folding>
-            <element signature="e#4005#4006#0" expanded="true" />
-            <element signature="e#4032#4033#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../../Minecraft/Library/spigot-1.13.2.jar!/org/bukkit/material/MaterialData.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-          <folding>
-            <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../../Minecraft/Library/spigot-1.13.2.jar!/org/bukkit/material/Wool.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/file/SaveProgress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/GUI/GUICreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Test.java" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -664,58 +461,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/custom/TreeEvent.java" />
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/anticheat/AntiCheating.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/BNZ.5c741d62413abdce/ClockListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/Script.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="81" column="34" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1373#1374#0" expanded="true" />
-            <element signature="e#1401#1402#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/quest/QuestEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="e#546#547#0" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/file/ScriptReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/TaskManager.java" />
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/PrintStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
@@ -754,10 +501,304 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/specificscript/PlaceScript.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="112" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="112" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/specificscript/PlayScript.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#617#618#0" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/specificscript/PickupScript.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#721#722#0" expanded="true" />
+            <element signature="e#766#767#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PlayTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PlayerWalk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PlayerShear.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-724">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PickupItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-350">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/BlockPlace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-350">
+          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/specificscript/WalkScript.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/BlockBreak.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="829">
+          <caret line="53" column="62" lean-forward="true" selection-start-line="53" selection-start-column="62" selection-end-line="53" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/anticheat/AntiCheating.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/event/InventoryClick.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/event/PlayerJoin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/file/FileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/GUI/GUICreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/quest/DailyQuestCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-342">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/quest/QuestEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/specificscript/BreakScript.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/Script.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="946">
+          <caret line="55" column="58" lean-forward="true" selection-start-line="55" selection-start-column="58" selection-end-line="55" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/QuickHash.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../../Minecraft/Library/spigot-1.13.2.jar!/org/bukkit/entity/EntityType.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Enum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="231" column="55" selection-start-line="231" selection-start-column="52" selection-end-line="231" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../../Minecraft/Library/spigot-1.13.2.jar!/org/bukkit/Material.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1540">
+          <caret line="121" column="35" lean-forward="true" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/specificscript/MythicMobKillScript.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="13" column="178" selection-start-line="13" selection-start-column="178" selection-end-line="13" selection-end-column="178" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#705#706#0" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/command/PluginCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/ScriptType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="57" lean-forward="true" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/specificscript/KillScript.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#755#756#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/file/SaveProgress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/script/ScriptManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2420">
-          <caret line="131" column="49" selection-start-line="131" selection-start-column="49" selection-end-line="131" selection-end-column="49" />
+        <state relative-caret-position="245">
+          <caret line="153" column="8" selection-start-line="153" selection-start-column="8" selection-end-line="153" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4179#4180#0" expanded="true" />
@@ -770,81 +811,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/main/Main.java">
+    <entry file="jar://$PROJECT_DIR$/../../../../Minecraft/Library/MythicMobs-4.5.5.jar!/io/lumine/xikage/mythicmobs/mobs/MobManager.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="257">
+          <caret line="571" column="36" lean-forward="true" selection-start-line="571" selection-start-column="36" selection-end-line="571" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../../Minecraft/Library/MythicMobs-4.5.5.jar!/io/lumine/xikage/mythicmobs/api/bukkit/BukkitAPIHelper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="31" column="53" lean-forward="true" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PlayTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PlayerWalk.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PlayerShear.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/PickupItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/KillEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="47">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/BlockBreak.java">
+    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/file/ScriptReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugin.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/evatunadailyquest/salkcoding/questevent/BlockPlace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+        <state relative-caret-position="2486">
+          <caret line="113" column="43" lean-forward="true" selection-start-line="113" selection-start-column="43" selection-end-line="113" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -862,7 +857,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

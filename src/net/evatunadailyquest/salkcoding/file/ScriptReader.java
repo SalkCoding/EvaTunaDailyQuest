@@ -1,24 +1,22 @@
 package net.evatunadailyquest.salkcoding.file;
 
 import com.google.gson.*;
+import io.lumine.xikage.mythicmobs.MythicMobs;
+import io.lumine.xikage.mythicmobs.api.bukkit.BukkitAPIHelper;
 import net.evatunadailyquest.salkcoding.Constants;
 import net.evatunadailyquest.salkcoding.quest.QuestEvent;
-import net.evatunadailyquest.salkcoding.quest.QuestType;
 import net.evatunadailyquest.salkcoding.script.Script;
+import net.evatunadailyquest.salkcoding.script.ScriptType;
+import net.evatunadailyquest.salkcoding.script.specificscript.*;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class ScriptReader {
 
@@ -30,21 +28,15 @@ public class ScriptReader {
 
         File[] files = Constants.script_dir.listFiles();
         fileFor:
-        for (File file : files) {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String line;
-            StringBuilder builder = new StringBuilder();
-            while ((line = reader.readLine()) != null) {
-                builder.append(line);
-            }
-            JsonParser parser = new JsonParser();
+        for (File file : Objects.requireNonNull(files)) {
             Gson gson = new Gson();
-            JsonObject json = parser.parse(builder.toString()).getAsJsonObject();
+            JsonParser parser = new JsonParser();
+            JsonObject json = parser.parse(FileUtil.getJsonStringFromFile(file)).getAsJsonObject();
 
             String questName = ChatColor.translateAlternateColorCodes('&', json.get("QuestName").getAsString());
 
-            List<String> GUILore = gson.fromJson(json.get("GUI_Lore"), List.class);
-            List<String> clearMessage = gson.fromJson(json.get("Clear_Messages"), List.class);
+            List<String> GUILore = gson.fromJson(json.get("GUILore"), List.class);
+            List<String> clearMessage = gson.fromJson(json.get("ClearMessages"), List.class);
             for (int i = 0; i < clearMessage.size(); i++)
                 clearMessage.set(i, ChatColor.translateAlternateColorCodes('&', clearMessage.get(i)));
             for (int i = 0; i < GUILore.size(); i++)
@@ -67,36 +59,74 @@ public class ScriptReader {
                 itemList.add(item);
             }
 
+            //System.out.println(file.getName());
             JsonObject event = json.get("Event").getAsJsonObject();
-            List<String> materialObjectiveTypes = gson.fromJson(event.get("Material_Objective_Types"), List.class);
-            List<String> entityTypeObjectiveTypes = gson.fromJson(event.get("EntityType_Objective_Types"), List.class);
-            HashSet<Object> set = new HashSet<>();
-            if (materialObjectiveTypes != null) {
-                for (String string : materialObjectiveTypes) {
+            ScriptType scriptType = ScriptType.valueOf(event.get("QuestType").getAsString());
+            List<String> objectiveTypes = gson.fromJson(event.get("ObjectiveTypes"), List.class);
+            QuestEvent questEvent = new QuestEvent(event.get("Condition").getAsInt());
+            //System.out.println(scriptType.toString() + " " + objectiveTypes.toString());
+            switch (scriptType) {
+                case Break:
+                case Place:
+                case Pickup: {
+                    HashSet<Material> set = new HashSet<>();
                     try {
-                        Material material = Material.valueOf(string);
-                        set.add(material);
+                        for (String type : objectiveTypes) set.add(Material.valueOf(type));
                     } catch (IllegalArgumentException e) {
-                        System.out.println(Constants.Console_Format + "Config file named \"" + file.getName() + "\" has error : " + string + " is a wrong Material value");
-                        e.printStackTrace();
+                        System.out.println(Constants.Console_Format + "Config file named \"" + file.getName() + "\" has error and that script file won't be added");
                         continue fileFor;
                     }
-                }
-            }
-            if (entityTypeObjectiveTypes != null) {
-                for (String string : entityTypeObjectiveTypes) {
-                    try {
-                        EntityType material = EntityType.valueOf(string);
-                        set.add(material);
-                    } catch (IllegalArgumentException e) {
-                        System.out.println(Constants.Console_Format + "Config file named \"" + file.getName() + "\" has error : " + string + " is a wrong EntityType value");
-                        e.printStackTrace();
-                        continue fileFor;
+                    switch (scriptType) {
+                        case Break:
+                            map.put(questName, new BreakScript(questName, GUILore, clearMessage, set, questEvent, commands, itemList));
+                            break;
+                        case Place:
+                            map.put(questName, new PlaceScript(questName, GUILore, clearMessage, set, questEvent, commands, itemList));
+                            break;
+                        case Pickup:
+                            map.put(questName, new PickupScript(questName, GUILore, clearMessage, set, questEvent, commands, itemList));
+                            break;
                     }
                 }
+                break;
+                case Kill: {
+                    HashSet<EntityType> set = new HashSet<>();
+                    try {
+                        for (String type : objectiveTypes) set.add(EntityType.valueOf(type));
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(Constants.Console_Format + "Config file named \"" + file.getName() + "\" has error and that script file won't be added");
+                        continue fileFor;
+                    }
+                    map.put(questName, new KillScript(questName, GUILore, clearMessage, set, questEvent, commands, itemList));
+                }
+                break;
+                case MythicMobKill: {
+                    HashSet<String> set = new HashSet<>();
+                    BukkitAPIHelper helper = MythicMobs.inst().getAPIHelper();
+                    for (String type : objectiveTypes) {
+                        if (helper.getMythicMob(type) != null)
+                            set.add(type);
+                        else {
+                            try {
+                                throw new IllegalArgumentException(type + " is not correct mythic mob's internal name!");
+                            } catch (IllegalArgumentException e) {
+                                System.out.println(Constants.Console_Format + "Config file named \"" + file.getName() + "\" has error and that script won't be added");
+                                continue fileFor;
+                            }
+                        }
+                    }
+                    map.put(questName, new MythicMobKillScript(questName, GUILore, clearMessage, set, questEvent, commands, itemList));
+                }
+                break;
+                case Walk:
+                    map.put(questName, new WalkScript(questName, GUILore, clearMessage, questEvent, commands, itemList));
+                    break;
+                case Play:
+                    map.put(questName, new PlayScript(questName, GUILore, clearMessage, questEvent, commands, itemList));
+                    break;
+                default:
+                    System.out.println(Constants.Console_Format + "Config file named \"" + file.getName() + "\" has error and that script file won't be added");
             }
-            map.put(questName, new Script(questName, GUILore, clearMessage, new QuestEvent(QuestType.valueOf(event.get("QuestType").getAsString()), set,
-                    event.get("Condition").getAsInt()), commands, itemList));
             //System.out.println(questName + GUILore.toString() + clearMessage.toString() + event.get("QuestType").getAsString() + set.toString() + event.get("Condition").getAsString() + commands.toString() + "" + itemList.toString());
         }
         System.out.println(Constants.Console_Format + map.size() + " of scripts are loaded");

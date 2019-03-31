@@ -1,10 +1,9 @@
 package net.evatunadailyquest.salkcoding.questevent;
 
 import net.evatunadailyquest.salkcoding.Constants;
-import net.evatunadailyquest.salkcoding.quest.QuestEvent;
-import net.evatunadailyquest.salkcoding.quest.QuestType;
 import net.evatunadailyquest.salkcoding.script.Script;
 import net.evatunadailyquest.salkcoding.script.ScriptManager;
+import net.evatunadailyquest.salkcoding.script.specificscript.PickupScript;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -18,7 +17,7 @@ public class PickupItem implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPick(EntityPickupItemEvent event) {
-        if(event.isCancelled())
+        if (event.isCancelled())
             return;
         if (!(event.getEntity() instanceof Player))
             return;
@@ -27,18 +26,15 @@ public class PickupItem implements Listener {
             return;
         List<Script> list = ScriptManager.getPlayerDailyQuests(player);
         for (Script script : list) {
-            if (script.isClear())
+            if (script.isClear() || !(script instanceof PickupScript))
                 continue;
             ItemStack item = event.getItem().getItemStack();
-            QuestEvent questEvent = script.getQuestEvent();
-            if (questEvent.getType() == QuestType.PICKUP_ITEM && questEvent.getObjectiveTypes().contains(item.getType())) {
+            PickupScript pickupScript = (PickupScript) script;
+            if (pickupScript.isContainInSet(item.getType())) {
                 int added = ScriptManager.getDrop(player.getUniqueId(), item);
                 if (added < 0 || Constants.getEmptySlot(player, item) <= 0)
                     return;
-                double progress = questEvent.getProgress() + added;
-                if (questEvent.getCondition() <= progress) script.clear(player);
-                else questEvent.setProgress(progress);
-                Constants.sendPercentage(player, script, questEvent, added);
+                script.addProgress(player, 1);
                 ScriptManager.removeDrop(player.getUniqueId(), item);
                 return;
             }

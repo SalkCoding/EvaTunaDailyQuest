@@ -33,7 +33,7 @@ public class PluginCommand implements CommandExecutor {
                             commandSender.sendMessage(Constants.Info_Format + player.getName() + "'s quests information");
                             for (Script script : list) {
                                 commandSender.sendMessage("Script name : " + script.getQuestName());
-                                commandSender.sendMessage("    Script Type : " + script.getQuestEvent().getType());
+                                commandSender.sendMessage("    Script Type : " + script.getClass().toString());
                                 commandSender.sendMessage("    Progress : " + script.getQuestEvent().getProgress());
                                 commandSender.sendMessage("    Condition : " + script.getQuestEvent().getCondition());
                             }
@@ -54,10 +54,11 @@ public class PluginCommand implements CommandExecutor {
                 commandSender.sendMessage(Constants.Warn_Format + "You don't have the permission");
             }
         } else if (strings.length == 0) {
-            if (!(commandSender instanceof Player)) {
-                commandSender.sendMessage(Constants.Error_Format + "Console can't use this command");
+            if (commandSender instanceof Player) {
+                GUICreator.createGUI((Player) commandSender);
+                return true;
             }
-            GUICreator.createGUI((Player) commandSender);
+            commandSender.sendMessage(Constants.Error_Format + "Console can't use this command");
         }
         return true;
     }

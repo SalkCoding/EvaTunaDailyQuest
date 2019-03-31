@@ -1,8 +1,9 @@
 name: EvaTunaDailyQuest
 main: net.evatunadailyquest.salkcoding.main.Main
-version: 1.1.1
+version: 1.1.3
 author: Salk_Coding
 api-version: 1.13
+depend: [MythicMobs]
 commands:
   DailyQuest:
     description: Base command of all commmand in this plugin

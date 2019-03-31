@@ -1,10 +1,8 @@
 package net.evatunadailyquest.salkcoding.questevent;
 
-import net.evatunadailyquest.salkcoding.Constants;
-import net.evatunadailyquest.salkcoding.quest.QuestEvent;
-import net.evatunadailyquest.salkcoding.quest.QuestType;
 import net.evatunadailyquest.salkcoding.script.Script;
 import net.evatunadailyquest.salkcoding.script.ScriptManager;
+import net.evatunadailyquest.salkcoding.script.specificscript.WalkScript;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -17,7 +15,7 @@ public class PlayerWalk implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onWalk(PlayerMoveEvent event) {
-        if(event.isCancelled())
+        if (event.isCancelled())
             return;
         Player player = event.getPlayer();
         if (ScriptManager.getPlayerDailyQuests(player) == null)
@@ -26,13 +24,9 @@ public class PlayerWalk implements Listener {
         for (Script script : list) {
             if (script.isClear())
                 continue;
-            QuestEvent questEvent = script.getQuestEvent();
-            if (questEvent.getType() == QuestType.WALK_ON_BLOCK) {
+            if (script instanceof WalkScript) {
                 double added = event.getFrom().distance(event.getTo());
-                double progress = questEvent.getProgress() + added;
-                if (questEvent.getCondition() <= progress) script.clear(player);
-                else questEvent.setProgress(progress);
-                Constants.sendPercentage(player, script, questEvent, (int) added);
+                script.addProgress(player, added);
                 return;
             }
         }

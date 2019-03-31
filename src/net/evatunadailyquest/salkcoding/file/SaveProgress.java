@@ -23,7 +23,7 @@ public class SaveProgress {
 
             json.addProperty("Name", Bukkit.getOfflinePlayer(o.getKey()).getName());
             json.addProperty("UUID", o.getKey().toString());
-            json.addProperty("Did_Reset", resetSet.contains(o.getKey()));
+            json.addProperty("DidReset", resetSet.contains(o.getKey()));
 
             JsonArray array = new JsonArray();
             for (Script script : o.getValue()) {
@@ -33,7 +33,7 @@ public class SaveProgress {
                 scriptObject.addProperty("Clear", script.isClear());
                 array.add(scriptObject);
             }
-            json.add("Quest_List", array);
+            json.add("QuestList", array);
 
             FileWriter writer = new FileWriter(file);
             writer.write(gson.toJson(json));
@@ -47,10 +47,10 @@ public class SaveProgress {
         HashMap<UUID, List<Script>> playerMap = new HashMap<>();
         if (!timemap_dir.exists())
             timemap_dir.mkdirs();
-        for (File file : timemap_dir.listFiles()) {
+        for (File file : Objects.requireNonNull(timemap_dir.listFiles())) {
             JsonObject json = readFile(file);
             List<Script> list = new ArrayList<>();
-            for (JsonElement element : json.get("Quest_List").getAsJsonArray()) {
+            for (JsonElement element : json.get("QuestList").getAsJsonArray()) {
                 JsonObject scriptObject = element.getAsJsonObject();
                 Script script = ScriptManager.getScript(scriptObject.get("Name").getAsString()).clone();
                 script.getQuestEvent().setProgress(scriptObject.get("Progress").getAsFloat());
@@ -67,23 +67,17 @@ public class SaveProgress {
         HashSet<UUID> resetSet = new HashSet<>();
         if (!timemap_dir.exists())
             timemap_dir.mkdirs();
-        for (File file : timemap_dir.listFiles()) {
+        for (File file : Objects.requireNonNull(timemap_dir.listFiles())) {
             JsonObject json = readFile(file);
-            if(json.get("Did_Reset").getAsBoolean())
+            if (json.get("DidReset").getAsBoolean())
                 resetSet.add(UUID.fromString(json.get("UUID").getAsString()));
         }
         return resetSet;
     }
 
     private static JsonObject readFile(File file) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        String line;
-        StringBuilder builder = new StringBuilder();
-        while ((line = reader.readLine()) != null) {
-            builder.append(line);
-        }
         JsonParser parser = new JsonParser();
-        return parser.parse(builder.toString()).getAsJsonObject();
+        return parser.parse(FileUtil.getJsonStringFromFile(file)).getAsJsonObject();
     }
 
 }

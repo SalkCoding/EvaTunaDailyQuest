@@ -2,9 +2,9 @@ package net.evatunadailyquest.salkcoding.questevent;
 
 import net.evatunadailyquest.salkcoding.Constants;
 import net.evatunadailyquest.salkcoding.main.Main;
-import net.evatunadailyquest.salkcoding.quest.QuestType;
 import net.evatunadailyquest.salkcoding.script.Script;
 import net.evatunadailyquest.salkcoding.script.ScriptManager;
+import net.evatunadailyquest.salkcoding.script.specificscript.PlayScript;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -20,9 +20,9 @@ public class PlayTime implements Listener {
 
     private static final HashMap<String, BukkitTask> timeMap = new HashMap<>();
 
-    public boolean addPlayer(Player player, Script script) {
-        if (script.isClear() || script.getQuestEvent().getType() != QuestType.PLAY_TIME)
-            return false;
+    private void addPlayer(Player player, Script script) {
+        if (script.isClear() || !(script instanceof PlayScript))
+            return;
         if (!timeMap.containsKey(player.getName())) {
             timeMap.put(player.getName(), Bukkit.getScheduler().runTaskTimerAsynchronously(Main.getInstance(), () -> {
                 if (script.getQuestEvent().getCondition() > script.getQuestEvent().getProgress()) {
@@ -37,9 +37,7 @@ public class PlayTime implements Listener {
                     timeMap.remove(player.getName());
                 }
             }, 20, 20));
-            return true;
         }
-        return false;
     }
 
     @EventHandler
